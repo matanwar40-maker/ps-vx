@@ -2,6 +2,6 @@ TARGET      := hello
 OBJS        := main.o
 
 CFLAGS      := -O2 -Wall
-LIBDIRS     := $(PORTLIBS) $(PSL1GHT)/ppu/lib
+LIBDIRS     := $(PORTLIBS) $(PS3DEV)/ppu/ppu/lib
 
-include $(PSL1GHT)/ppu/ppu_rules
+include $(PS3DEV)/ppu/ppu/ppu_rules
