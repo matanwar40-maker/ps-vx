@@ -1,0 +1,28 @@
+name: Build PS3 Homebrew
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ps3dev/ps3dev:latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: make
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ps3-homebrew
+          path: |
+            *.self
+            *.elf
+            *.pkg
